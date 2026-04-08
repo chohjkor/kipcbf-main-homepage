@@ -9,12 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════
-   DESIGN SYSTEM: Blueprint of Trust
-   Primary: #000a1e  |  Orange: #ffb77d
-   Surface: #f9f9f9  |  Radius: 2px max
-═══════════════════════════════════════════════ */
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'Noto Sans KR',sans-serif;background:#f9f9f9;color:#1a1c1c;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -23,39 +17,16 @@ img,svg{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 button,input,select,textarea{font-family:'Noto Sans KR',sans-serif}
-
 :root{
-  --c-primary:#000a1e;
-  --c-primary-ct:#002147;
-  --c-on-primary:#ffffff;
-  --c-on-primary-ct:#708ab5;
-  --c-surface:#f9f9f9;
-  --c-surface-low:#f3f3f3;
-  --c-surface-ct:#eeeeee;
-  --c-surface-high:#e8e8e8;
-  --c-surface-white:#ffffff;
-  --c-on-surface:#1a1c1c;
-  --c-on-surface-v:#44474e;
-  --c-outline:#74777f;
-  --c-outline-v:#c4c6cf;
-  --c-tertiary-dim:#ffb77d;
-  --c-on-tertiary:#2f1500;
-  --c-max:1280px;
-  --c-py:7rem;
+  --c-primary:#000a1e;--c-primary-ct:#002147;--c-on-primary:#ffffff;--c-on-primary-ct:#708ab5;
+  --c-surface:#f9f9f9;--c-surface-low:#f3f3f3;--c-surface-ct:#eeeeee;--c-surface-high:#e8e8e8;
+  --c-surface-white:#ffffff;--c-on-surface:#1a1c1c;--c-on-surface-v:#44474e;
+  --c-outline:#74777f;--c-outline-v:#c4c6cf;--c-tertiary-dim:#ffb77d;--c-on-tertiary:#2f1500;
+  --c-max:1280px;--c-py:7rem;
 }
-
 .wrap{max-width:var(--c-max);margin:0 auto;padding:0 2.5rem}
 @media(max-width:768px){.wrap{padding:0 1.25rem}}
-
-/* ═══ NAV ═══ */
-#nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(249,249,249,.82);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(196,198,207,.2);
-  transition:box-shadow .2s;
-}
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(249,249,249,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,198,207,.2);transition:box-shadow .2s}
 #nav.scrolled{box-shadow:0 2px 32px rgba(0,10,30,.06)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
 .nav-logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
@@ -73,13 +44,7 @@ button,input,select,textarea{font-family:'Noto Sans KR',sans-serif}
 .mob-nav.open{display:block}
 .mob-nav a{display:block;padding:12px 0;font-size:16px;font-weight:700;color:var(--c-on-surface);border-bottom:1px solid var(--c-surface-ct)}
 .mob-nav a:last-child{border-bottom:none;color:var(--c-primary)}
-
-/* ═══ HERO ═══ */
-#hero{
-  padding:160px 0 100px;
-  background:linear-gradient(135deg,var(--c-primary) 0%,var(--c-primary-ct) 55%,#001832 100%);
-  position:relative;overflow:hidden;min-height:860px;display:flex;align-items:center;
-}
+#hero{padding:160px 0 100px;background:linear-gradient(135deg,var(--c-primary) 0%,var(--c-primary-ct) 55%,#001832 100%);position:relative;overflow:hidden;min-height:860px;display:flex;align-items:center}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:80px 80px}
 .hero-diag{position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(to bottom-left,rgba(255,183,125,.07) 0%,transparent 60%)}
 .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
@@ -90,133 +55,82 @@ button,input,select,textarea{font-family:'Noto Sans KR',sans-serif}
 .hero-sub{font-size:18px;color:var(--c-on-primary-ct);line-height:1.75;margin-bottom:44px;max-width:480px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 30px;border-radius:2px;font-family:'Public Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:-.01em;transition:all .15s;cursor:pointer;white-space:nowrap}
-.btn-white{background:#fff;color:var(--c-primary)}
-.btn-white:hover{background:var(--c-surface-high)}
-.btn-border{background:transparent;border:1.5px solid rgba(255,255,255,.25);color:#fff}
-.btn-border:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
-.btn-primary{background:var(--c-primary);color:#fff}
-.btn-primary:hover{background:var(--c-primary-ct)}
-.btn-ghost{background:transparent;border:1.5px solid var(--c-outline-v);color:var(--c-on-surface)}
-.btn-ghost:hover{background:var(--c-surface-ct);border-color:var(--c-primary)}
-.btn-orange{background:var(--c-tertiary-dim);color:var(--c-on-tertiary)}
-.btn-orange:hover{opacity:.9}
+.btn-white{background:#fff;color:var(--c-primary)}.btn-white:hover{background:var(--c-surface-high)}
+.btn-border{background:transparent;border:1.5px solid rgba(255,255,255,.25);color:#fff}.btn-border:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+.btn-orange{background:var(--c-tertiary-dim);color:var(--c-on-tertiary)}.btn-orange:hover{opacity:.9}
 .hero-cards{display:flex;flex-direction:column;gap:16px}
 .hero-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--c-tertiary-dim);padding:18px 22px;border-radius:2px}
 .hero-card-lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
 .hero-card-val{font-size:14px;color:rgba(255,255,255,.85);font-weight:500}
-
-/* ═══ STATS ═══ */
 #stats{background:var(--c-primary);padding:0}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:32px 24px;text-align:center;position:relative;border-right:1px solid rgba(255,255,255,.07)}
-.stat:last-child{border-right:none}
+.stat{padding:32px 24px;text-align:center;position:relative;border-right:1px solid rgba(255,255,255,.07)}.stat:last-child{border-right:none}
 .stat-n{font-family:'Public Sans',sans-serif;font-size:40px;font-weight:900;color:var(--c-tertiary-dim);line-height:1;letter-spacing:-.03em}
 .stat-u{font-size:20px;color:rgba(255,255,255,.35)}
 .stat-l{font-size:12px;color:rgba(255,255,255,.5);margin-top:6px;letter-spacing:.02em}
-
-/* ═══ SHARED SECTION HEADERS ═══ */
-.sec{padding:var(--c-py) 0}
-.sec-gray{background:var(--c-surface-low)}
-.sec-ct{background:var(--c-surface-ct)}
-.sec-white{background:var(--c-surface-white)}
-.sec-hd{margin-bottom:5rem}
-.sec-hd-split{display:flex;flex-direction:column;gap:16px;margin-bottom:5rem}
+.sec{padding:var(--c-py) 0}.sec-gray{background:var(--c-surface-low)}.sec-white{background:var(--c-surface-white)}
+.sec-hd{margin-bottom:5rem}.sec-hd-split{display:flex;flex-direction:column;gap:16px;margin-bottom:5rem}
 .sec-hd-row{display:flex;align-items:flex-end;justify-content:space-between;gap:32px}
 .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--c-outline);display:block;margin-bottom:10px}
 .sec-title{font-family:'Public Sans',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:900;color:var(--c-primary);letter-spacing:-.025em;line-height:1.1}
 .sec-title-rule{width:48px;height:4px;background:var(--c-primary);margin-top:14px}
-.sec-title--white{color:#fff}
-.sec-lead{font-size:16px;color:var(--c-on-surface-v);line-height:1.75;max-width:500px}
-.sec-lead--white{color:var(--c-on-primary-ct)}
-
-/* ═══ SERVICES ═══ */
+.sec-title--white{color:#fff}.sec-lead{font-size:16px;color:var(--c-on-surface-v);line-height:1.75;max-width:500px}.sec-lead--white{color:var(--c-on-primary-ct)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--c-surface-high)}
-.svc-card{background:var(--c-surface-white);padding:40px 32px;border-left:4px solid transparent;transition:all .2s}
-.svc-card:hover{border-left-color:var(--c-primary);background:var(--c-surface-low)}
+.svc-card{background:var(--c-surface-white);padding:40px 32px;border-left:4px solid transparent;transition:all .2s}.svc-card:hover{border-left-color:var(--c-primary);background:var(--c-surface-low)}
 .svc-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-outline);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px;display:block}
 .svc-card-title{font-family:'Public Sans',sans-serif;font-size:22px;font-weight:900;color:var(--c-primary);letter-spacing:-.02em;margin-bottom:20px}
 .svc-items{list-style:none;display:flex;flex-direction:column;gap:0}
-.svc-item{padding:12px 0;border-bottom:1px solid var(--c-surface-ct);display:flex;align-items:flex-start;gap:10px}
-.svc-item:last-child{border-bottom:none}
+.svc-item{padding:12px 0;border-bottom:1px solid var(--c-surface-ct);display:flex;align-items:flex-start;gap:10px}.svc-item:last-child{border-bottom:none}
 .svc-dot{width:4px;height:4px;border-radius:50%;background:var(--c-tertiary-dim);flex-shrink:0;margin-top:10px}
-.svc-item-wrap{}
-.svc-item-name{font-size:14px;font-weight:700;color:var(--c-on-surface)}
-.svc-item-desc{font-size:12px;color:var(--c-on-surface-v);margin-top:2px}
-
-/* ═══ WHY ═══ */
+.svc-item-name{font-size:14px;font-weight:700;color:var(--c-on-surface)}.svc-item-desc{font-size:12px;color:var(--c-on-surface-v);margin-top:2px}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .why-card{background:var(--c-surface-white);padding:40px 32px;border-left:4px solid var(--c-primary);transition:all .3s;cursor:default;position:relative;overflow:hidden}
 .why-card::after{content:'';position:absolute;inset:0;background:var(--c-primary);transform:scaleX(0);transform-origin:left;transition:transform .3s ease;z-index:0}
 .why-card:hover::after{transform:scaleX(1)}
-.why-card-inner{position:relative;z-index:1;transition:color .3s}
-.why-card:hover .why-card-inner *{color:#fff!important}
-.why-card:hover .why-card-inner .why-desc{color:rgba(255,255,255,.8)!important}
-.why-n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-outline-v);margin-bottom:18px;letter-spacing:.06em;transition:color .3s}
-.why-title{font-family:'Public Sans',sans-serif;font-size:20px;font-weight:900;color:var(--c-primary);letter-spacing:-.02em;margin-bottom:14px;transition:color .3s}
-.why-desc{font-size:14px;color:var(--c-on-surface-v);line-height:1.75;transition:color .3s}
-
-/* ═══ PROCESS ═══ */
+.why-card-inner{position:relative;z-index:1}.why-card:hover .why-card-inner *{color:#fff!important}.why-card:hover .why-card-inner .why-desc{color:rgba(255,255,255,.8)!important}
+.why-n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-outline-v);margin-bottom:18px;letter-spacing:.06em}
+.why-title{font-family:'Public Sans',sans-serif;font-size:20px;font-weight:900;color:var(--c-primary);letter-spacing:-.02em;margin-bottom:14px}
+.why-desc{font-size:14px;color:var(--c-on-surface-v);line-height:1.75}
 #process{padding:var(--c-py) 0;background:var(--c-surface-ct)}
 .proc-wrap{margin-top:4rem}
 .proc-row{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--c-surface-high)}
-.proc-step{background:var(--c-surface-low);padding:32px 20px;position:relative;transition:background .2s}
-.proc-step:hover{background:var(--c-surface-white)}
-.proc-num{font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;color:var(--c-surface-white);background:var(--c-primary);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-variant-numeric:tabular-nums}
+.proc-step{background:var(--c-surface-low);padding:32px 20px;transition:background .2s}.proc-step:hover{background:var(--c-surface-white)}
+.proc-num{font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;color:var(--c-surface-white);background:var(--c-primary);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
 .proc-title{font-family:'Public Sans',sans-serif;font-size:14px;font-weight:900;color:var(--c-primary);letter-spacing:-.01em;margin-bottom:10px;line-height:1.3}
 .proc-desc{font-size:12px;color:var(--c-on-surface-v);line-height:1.6}
 .proc-tag{display:inline-block;background:var(--c-tertiary-dim);color:var(--c-on-tertiary);font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 6px;border-radius:1px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.1em}
-
-/* ═══ PORTFOLIO ═══ */
 .port-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4rem;gap:40px}
 .port-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--c-primary);border-radius:2px;overflow:hidden;margin-bottom:3rem}
 .port-stat{background:var(--c-primary-ct);padding:24px 20px;text-align:center}
 .port-stat-n{font-family:'Public Sans',sans-serif;font-size:28px;font-weight:900;color:var(--c-tertiary-dim);letter-spacing:-.03em;line-height:1}
 .port-stat-l{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px}
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--c-surface-high);margin-bottom:3rem}
-.cat-card{background:var(--c-surface-white);padding:28px 24px;display:flex;align-items:center;gap:16px;transition:background .2s}
-.cat-card:hover{background:var(--c-surface-low)}
+.cat-card{background:var(--c-surface-white);padding:28px 24px;display:flex;align-items:center;gap:16px;transition:background .2s}.cat-card:hover{background:var(--c-surface-low)}
 .cat-icon{width:44px;height:44px;background:var(--c-surface-ct);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cat-n{font-family:'Public Sans',sans-serif;font-size:22px;font-weight:900;color:var(--c-primary);line-height:1;letter-spacing:-.02em}
-.cat-u{font-size:13px;color:var(--c-on-surface-v);margin-top:1px}
-.cat-name{font-size:14px;font-weight:700;color:var(--c-on-surface);margin-bottom:1px}
+.cat-u{font-size:13px;color:var(--c-on-surface-v);margin-top:1px}.cat-name{font-size:14px;font-weight:700;color:var(--c-on-surface);margin-bottom:1px}
 .port-table{width:100%;border-collapse:collapse;margin-bottom:2rem}
-.port-th{background:var(--c-primary);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:16px 20px;text-align:left}
-.port-th:last-child{text-align:right}
-.port-tr{background:var(--c-surface-white);border-bottom:1px solid rgba(196,198,207,.25);transition:background .15s}
-.port-tr:hover{background:var(--c-surface-low)}
-.port-td{padding:18px 20px;font-size:14px;color:var(--c-on-surface-v)}
-.port-td-name{font-weight:700;color:var(--c-primary)}
-.port-td-last{text-align:right}
+.port-th{background:var(--c-primary);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:16px 20px;text-align:left}.port-th:last-child{text-align:right}
+.port-tr{background:var(--c-surface-white);border-bottom:1px solid rgba(196,198,207,.25);transition:background .15s}.port-tr:hover{background:var(--c-surface-low)}
+.port-td{padding:18px 20px;font-size:14px;color:var(--c-on-surface-v)}.port-td-name{font-weight:700;color:var(--c-primary)}.port-td-last{text-align:right}
 .badge{display:inline-block;padding:4px 10px;border-radius:1px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500}
-.badge-best{background:#371a00;color:var(--c-tertiary-dim)}
-.badge-std{background:var(--c-surface-ct);color:var(--c-on-surface-v)}
+.badge-best{background:#371a00;color:var(--c-tertiary-dim)}.badge-std{background:var(--c-surface-ct);color:var(--c-on-surface-v)}
 .port-note{font-size:12px;color:var(--c-outline);text-align:right;font-family:'IBM Plex Mono',monospace}
-
-/* ═══ BLOG BANNER ═══ */
-.banner-blog{background:var(--c-surface-white);border-top:3px solid #03c75a;padding:32px 0;transition:background .2s}
-.banner-blog:hover{background:var(--c-surface-low)}
+.banner-blog{background:var(--c-surface-white);border-top:3px solid #03c75a;padding:32px 0;transition:background .2s;display:block}.banner-blog:hover{background:var(--c-surface-low)}
 .banner-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .banner-left{display:flex;align-items:center;gap:18px}
 .naver-badge{background:#03c75a;color:#fff;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:900;padding:6px 10px;border-radius:1px;letter-spacing:.04em;flex-shrink:0}
 .banner-title{font-family:'Public Sans',sans-serif;font-size:17px;font-weight:900;color:var(--c-primary);letter-spacing:-.02em}
 .banner-desc{font-size:13px;color:var(--c-on-surface-v);margin-top:2px}
 .banner-arrow{display:flex;align-items:center;gap:6px;font-family:'Public Sans',sans-serif;font-size:13px;font-weight:700;color:var(--c-primary);white-space:nowrap;flex-shrink:0}
-.banner-arrow svg{transition:transform .2s}
-.banner-blog:hover .banner-arrow svg{transform:translateX(4px)}
-
-/* ═══ KOIZI BANNER ═══ */
-.banner-koizi{background:var(--c-primary-ct);padding:40px 0;transition:opacity .2s}
-.banner-koizi:hover{opacity:.95}
+.banner-arrow svg{transition:transform .2s}.banner-blog:hover .banner-arrow svg{transform:translateX(4px)}
+.banner-koizi{background:var(--c-primary-ct);padding:40px 0}
 .koizi-inner{display:flex;align-items:center;justify-content:space-between;gap:32px}
 .koizi-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.14em;margin-bottom:8px}
 .koizi-title{font-family:'Public Sans',sans-serif;font-size:22px;font-weight:900;color:#fff;letter-spacing:-.02em;margin-bottom:6px}
-.koizi-yellow{color:#fff100}
-.koizi-sub{font-size:14px;color:var(--c-on-primary-ct);line-height:1.5}
-.koizi-cta{display:inline-flex;align-items:center;gap:8px;background:#fff100;color:#1a1c1c;padding:12px 24px;border-radius:2px;font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.01em;white-space:nowrap;flex-shrink:0;transition:opacity .15s}
-.koizi-cta:hover{opacity:.88}
+.koizi-yellow{color:#fff100}.koizi-sub{font-size:14px;color:var(--c-on-primary-ct);line-height:1.5}
+.koizi-cta{display:inline-flex;align-items:center;gap:8px;background:#fff100;color:#1a1c1c;padding:12px 24px;border-radius:2px;font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;white-space:nowrap;flex-shrink:0;transition:opacity .15s}.koizi-cta:hover{opacity:.88}
 .koizi-divider{width:1px;height:56px;background:rgba(255,255,255,.12);flex-shrink:0}
-
-/* ═══ FAQ ═══ */
 .faq-list{max-width:780px;margin:0 auto}
 details.faq{background:var(--c-surface-low);margin-bottom:4px;transition:background .2s}
 details.faq[open]{background:var(--c-surface-white)}
@@ -226,8 +140,6 @@ details.faq summary::after{content:'▾';font-size:14px;color:var(--c-outline);t
 details.faq[open] summary::after{transform:rotate(180deg)}
 details.faq summary:hover{color:var(--c-primary)}
 .faq-body{padding:0 24px 22px;font-size:14px;color:var(--c-on-surface-v);line-height:1.8}
-
-/* ═══ CONTACT ═══ */
 #contact{padding:var(--c-py) 0;background:var(--c-primary)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
 .contact-tagline{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.14em;margin-bottom:20px}
@@ -243,78 +155,39 @@ details.faq summary:hover{color:var(--c-primary)}
 .form-lbl{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
 .form-lbl .req{color:var(--c-tertiary-dim)}
 .form-ctrl{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);padding:10px 0;font-size:15px;color:#fff;font-family:'Noto Sans KR',sans-serif;outline:none;transition:border-color .2s;border-radius:0}
-.form-ctrl::placeholder{color:rgba(255,255,255,.2)}
-.form-ctrl:focus{border-bottom:2px solid var(--c-tertiary-dim)}
+.form-ctrl::placeholder{color:rgba(255,255,255,.2)}.form-ctrl:focus{border-bottom:2px solid var(--c-tertiary-dim)}
 .form-ctrl option{background:var(--c-primary-ct);color:#fff}
-textarea.form-ctrl{resize:vertical;min-height:100px;border:1px solid rgba(255,255,255,.2);padding:10px 12px;border-radius:2px;margin-top:0}
+textarea.form-ctrl{resize:vertical;min-height:100px;border:1px solid rgba(255,255,255,.2);padding:10px 12px;border-radius:2px}
 textarea.form-ctrl:focus{border-color:var(--c-tertiary-dim)}
-.form-submit{width:100%;background:var(--c-tertiary-dim);color:var(--c-on-tertiary);border:none;padding:15px;font-family:'Public Sans',sans-serif;font-size:16px;font-weight:900;letter-spacing:-.01em;cursor:pointer;border-radius:2px;transition:opacity .15s;margin-top:8px}
-.form-submit:hover{opacity:.88}
-
-/* ═══ FINAL CTA ═══ */
+.form-submit{width:100%;background:var(--c-tertiary-dim);color:var(--c-on-tertiary);border:none;padding:15px;font-family:'Public Sans',sans-serif;font-size:16px;font-weight:900;cursor:pointer;border-radius:2px;transition:opacity .15s;margin-top:8px}.form-submit:hover{opacity:.88}
 .final-cta{background:var(--c-primary-ct);padding:5rem 0;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
 .final-cta h2{font-family:'Public Sans',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:900;color:#fff;letter-spacing:-.025em;margin-bottom:14px}
 .final-cta p{font-size:16px;color:var(--c-on-primary-ct);max-width:560px;margin:0 auto 36px;line-height:1.7}
-
-/* ═══ FOOTER ═══ */
 footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,255,.05)}
 .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:4rem}
 .footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.footer-logo-row svg{height:30px;width:auto}
 .footer-brand{font-family:'Public Sans',sans-serif;font-size:14px;font-weight:900;color:#fff;letter-spacing:-.01em}
 .footer-desc{font-size:13px;color:rgba(255,255,255,.38);line-height:1.7}
 .footer-h{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px}
-.footer-links li{margin-bottom:8px}
-.footer-links a{font-size:13px;color:rgba(255,255,255,.45);transition:color .15s}
-.footer-links a:hover{color:var(--c-tertiary-dim)}
+.footer-links li{margin-bottom:8px}.footer-links a{font-size:13px;color:rgba(255,255,255,.45);transition:color .15s}.footer-links a:hover{color:var(--c-tertiary-dim)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
-.footer-domain{font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(255,255,255,.25)}
-
-/* ═══ ANIMATIONS ═══ */
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}.footer-domain{font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(255,255,255,.25)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{animation:fadeUp .6s ease both}
-.fade-up-2{animation:fadeUp .6s .15s ease both}
-.fade-up-3{animation:fadeUp .6s .3s ease both}
-
-/* ═══ RESPONSIVE ═══ */
-@media(max-width:1024px){
-  .svc-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .proc-row{grid-template-columns:repeat(3,1fr)}
-  .cat-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
-  .koizi-divider{display:none}
-}
-@media(max-width:768px){
-  :root{--c-py:4rem}
-  .nav-links{display:none}
-  .nav-toggle{display:flex}
-  .hero-inner{grid-template-columns:1fr}
-  .hero-cards{display:none}
-  .stats-row{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .proc-row{grid-template-columns:1fr 1fr}
-  .cat-grid{grid-template-columns:1fr 1fr}
-  .why-grid{grid-template-columns:1fr}
-  .port-stat-row{grid-template-columns:repeat(2,1fr)}
-  .port-top{flex-direction:column;gap:16px}
-  .contact-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-  .banner-inner{flex-direction:column;align-items:flex-start;gap:16px}
-  .koizi-inner{flex-direction:column;gap:20px;align-items:flex-start}
-}
-@media(max-width:480px){
-  .cat-grid{grid-template-columns:1fr}
-  .proc-row{grid-template-columns:1fr}
-}
+.fade-up{animation:fadeUp .6s ease both}.fade-up-2{animation:fadeUp .6s .15s ease both}.fade-up-3{animation:fadeUp .6s .3s ease both}
+@media(max-width:1024px){.svc-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.proc-row{grid-template-columns:repeat(3,1fr)}.cat-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.koizi-divider{display:none}}
+@media(max-width:768px){:root{--c-py:4rem}.nav-links{display:none}.nav-toggle{display:flex}.hero-inner{grid-template-columns:1fr}.hero-cards{display:none}.stats-row{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.proc-row{grid-template-columns:1fr 1fr}.cat-grid{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr}.port-stat-row{grid-template-columns:repeat(2,1fr)}.port-top{flex-direction:column;gap:16px}.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.banner-inner{flex-direction:column;align-items:flex-start;gap:16px}.koizi-inner{flex-direction:column;gap:20px;align-items:flex-start}}
+@media(max-width:480px){.cat-grid{grid-template-columns:1fr}.proc-row{grid-template-columns:1fr}}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57P0CL3L27"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57P0CL3L27');
+</script>
 </head>
 <body>
-
-<!-- ═══ NAV ═══ -->
 <nav id="nav">
   <div class="wrap">
     <div class="nav-inner">
@@ -347,7 +220,6 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
     </div>
   </div>
 </nav>
-
 <div class="mob-nav" id="mobNav">
   <a href="#services" onclick="closeMob()">서비스</a>
   <a href="#process" onclick="closeMob()">프로세스</a>
@@ -355,8 +227,6 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
   <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" onclick="closeMob()">상담 문의</a>
 </div>
-
-<!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-diag"></div>
@@ -364,11 +234,7 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
     <div class="hero-inner">
       <div>
         <div class="hero-badge fade-up">Standard for BF Architecture · KIPC</div>
-        <h1 class="hero-h1 fade-up-2">
-          공공건축<br>
-          <em>BF인증</em>
-          전문회사
-        </h1>
+        <h1 class="hero-h1 fade-up-2">공공건축<br><em>BF인증</em>전문회사</h1>
         <div class="hero-rule fade-up-3"></div>
         <p class="hero-sub fade-up-3">설계 검토부터 예비인증·본인증 대응까지,<br>공공기관과 건축 실무를 가장 정확하게 연결합니다.</p>
         <div class="hero-btns fade-up-3">
@@ -377,59 +243,27 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
         </div>
       </div>
       <div class="hero-cards">
-        <div class="hero-card">
-          <div class="hero-card-lbl">주요 대상 시설</div>
-          <div class="hero-card-val">공공청사 · 교육시설 · 복지시설 · 문화시설</div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-lbl">인증 지원 범위</div>
-          <div class="hero-card-val">예비인증 · 본인증 · 설계단계 사전검토</div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-lbl">추가 인증 서비스</div>
-          <div class="hero-card-val">녹색건축인증 · 에너지효율등급 · 제로에너지</div>
-        </div>
-        <div class="hero-card" style="border-left-color:rgba(255,255,255,.25)">
-          <div class="hero-card-lbl">기관 인정</div>
-          <div class="hero-card-val">KOITA 연구개발전담부서 인정 · 소셜벤처기업</div>
-        </div>
+        <div class="hero-card"><div class="hero-card-lbl">주요 대상 시설</div><div class="hero-card-val">공공청사 · 교육시설 · 복지시설 · 문화시설</div></div>
+        <div class="hero-card"><div class="hero-card-lbl">인증 지원 범위</div><div class="hero-card-val">예비인증 · 본인증 · 설계단계 사전검토</div></div>
+        <div class="hero-card"><div class="hero-card-lbl">추가 인증 서비스</div><div class="hero-card-val">녹색건축인증 · 에너지효율등급 · 제로에너지</div></div>
+        <div class="hero-card" style="border-left-color:rgba(255,255,255,.25)"><div class="hero-card-lbl">기관 인정</div><div class="hero-card-val">KOITA 연구개발전담부서 인정 · 소셜벤처기업</div></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ═══ STATS ═══ -->
 <div id="stats">
   <div class="stats-row">
-    <div class="stat">
-      <div class="stat-n">30<span class="stat-u">+</span></div>
-      <div class="stat-l">건축인증 수행실적</div>
-    </div>
-    <div class="stat">
-      <div class="stat-n">8<span class="stat-u">개</span></div>
-      <div class="stat-l">전문 서비스 영역</div>
-    </div>
-    <div class="stat">
-      <div class="stat-n">26<span class="stat-u">건</span></div>
-      <div class="stat-l">보유 저작권</div>
-    </div>
-    <div class="stat">
-      <div class="stat-n">2<span class="stat-u">건</span></div>
-      <div class="stat-l">보유 특허</div>
-    </div>
+    <div class="stat"><div class="stat-n">30<span class="stat-u">+</span></div><div class="stat-l">건축인증 수행실적</div></div>
+    <div class="stat"><div class="stat-n">8<span class="stat-u">개</span></div><div class="stat-l">전문 서비스 영역</div></div>
+    <div class="stat"><div class="stat-n">26<span class="stat-u">건</span></div><div class="stat-l">보유 저작권</div></div>
+    <div class="stat"><div class="stat-n">2<span class="stat-u">건</span></div><div class="stat-l">보유 특허</div></div>
   </div>
 </div>
-
-<!-- ═══ SERVICES ═══ -->
 <section id="services" class="sec sec-white">
   <div class="wrap">
     <div class="sec-hd-split">
       <div class="sec-hd-row">
-        <div>
-          <span class="eyebrow">Services</span>
-          <h2 class="sec-title">전문 서비스 영역</h2>
-          <div class="sec-title-rule"></div>
-        </div>
+        <div><span class="eyebrow">Services</span><h2 class="sec-title">전문 서비스 영역</h2><div class="sec-title-rule"></div></div>
         <p class="sec-lead">공공시설 건축인증부터 컨설팅, 연구·교육까지 통합 지원합니다.</p>
       </div>
     </div>
@@ -438,356 +272,128 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
         <span class="svc-tag">01 — Architecture Certification</span>
         <h3 class="svc-card-title">건축인증</h3>
         <ul class="svc-items">
-          <li class="svc-item"><span class="svc-dot"></span><div class="svc-item-wrap"><div class="svc-item-name">BF인증 (장애물 없는 생활환경)</div><div class="svc-item-desc">예비인증 · 본인증 전 과정 컨설팅 및 대응</div></div></li>
-          <li class="svc-item"><span class="svc-dot"></span><div class="svc-item-wrap"><div class="svc-item-name">녹색건축인증 (G-SEED)</div><div class="svc-item-desc">친환경 건축물 인증 컨설팅</div></div></li>
-          <li class="svc-item"><span class="svc-dot"></span><div class="svc-item-wrap"><div class="svc-item-name">건축물에너지효율등급 · 제로에너지</div><div class="svc-item-desc">에너지 성능 인증 신청 및 대응 지원</div></div></li>
+          <li class="svc-item"><span class="svc-dot"></span><div><div class="svc-item-name">BF인증 (장애물 없는 생활환경)</div><div class="svc-item-desc">예비인증 · 본인증 전 과정 컨설팅 및 대응</div></div></li>
+          <li class="svc-item"><span class="svc-dot"></span><div><div class="svc-item-name">녹색건축인증 (G-SEED)</div><div class="svc-item-desc">친환경 건축물 인증 컨설팅</div></div></li>
+          <li class="svc-item"><span class="svc-dot"></span><div><div class="svc-item-name">건축물에너지효율등급 · 제로에너지</div><div class="svc-item-desc">에너지 성능 인증 신청 및 대응 지원</div></div></li>
         </ul>
       </div>
       <div class="svc-card">
         <span class="svc-tag">02 — Consulting</span>
         <h3 class="svc-card-title">컨설팅</h3>
         <ul class="svc-items">
-          <li class="svc-item"><span class="svc-dot"></span><div class="svc-item-wrap"><div class="svc-item-name">유니버설디자인(UD) 컨설팅</div><div class="svc-item-desc">설계단계 접근성 검토 및 개선 제안</div></div></li>
-          <li class="svc-item"><span class="svc-dot"></span><div class="svc-item-wrap"><div class="svc-item-name">장애인표준사업장 컨설팅</div><div class="svc-item-desc">장애인 고용환경 조성 실무 지원</div></div></li>
-          <li class="svc-item"><span class="svc-dot"></span><div class="svc-item-wrap"><div class="svc-item-name">주거안전 점검</div><div class="svc-item-desc">고령자·장애인 주거환경 진단 및 개선</div></div></li>
+          <li class="svc-item"><span class="svc-dot"></span><div><div class="svc-item-name">유니버설디자인(UD) 컨설팅</div><div class="svc-item-desc">설계단계 접근성 검토 및 개선 제안</div></div></li>
+          <li class="svc-item"><span class="svc-dot"></span><div><div class="svc-item-name">장애인표준사업장 컨설팅</div><div class="svc-item-desc">장애인 고용환경 조성 실무 지원</div></div></li>
+          <li class="svc-item"><span class="svc-dot"></span><div><div class="svc-item-name">주거안전 점검</div><div class="svc-item-desc">고령자·장애인 주거환경 진단 및 개선</div></div></li>
         </ul>
       </div>
       <div class="svc-card">
         <span class="svc-tag">03 — Research &amp; Education</span>
         <h3 class="svc-card-title">연구·교육</h3>
         <ul class="svc-items">
-          <li class="svc-item"><span class="svc-dot"></span><div class="svc-item-wrap"><div class="svc-item-name">연구용역 수탁</div><div class="svc-item-desc">접근성·무장애환경 분야 연구 수행</div></div></li>
-          <li class="svc-item"><span class="svc-dot"></span><div class="svc-item-wrap"><div class="svc-item-name">교육·강의</div><div class="svc-item-desc">BF인증·UD 실무 교육 프로그램 운영</div></div></li>
+          <li class="svc-item"><span class="svc-dot"></span><div><div class="svc-item-name">연구용역 수탁</div><div class="svc-item-desc">접근성·무장애환경 분야 연구 수행</div></div></li>
+          <li class="svc-item"><span class="svc-dot"></span><div><div class="svc-item-name">교육·강의</div><div class="svc-item-desc">BF인증·UD 실무 교육 프로그램 운영</div></div></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ═══ WHY ═══ -->
 <section class="sec sec-gray">
   <div class="wrap">
     <div class="sec-hd">
       <div class="sec-hd-row">
-        <div>
-          <span class="eyebrow">Why KIPC</span>
-          <h2 class="sec-title">왜 한국편의증진연구원인가</h2>
-          <div class="sec-title-rule"></div>
-        </div>
+        <div><span class="eyebrow">Why KIPC</span><h2 class="sec-title">왜 한국편의증진연구원인가</h2><div class="sec-title-rule"></div></div>
         <p class="sec-lead">단순한 자문을 넘어 실무적 해결책을 제시합니다.<br>건축의 현장을 이해하는 전문가 집단입니다.</p>
       </div>
     </div>
     <div class="why-grid">
-      <div class="why-card">
-        <div class="why-card-inner">
-          <div class="why-n">01 ——</div>
-          <h3 class="why-title">BF인증 실무 중심 대응</h3>
-          <p class="why-desc">설계단계 사전 검토부터 예비인증, 시공단계 보완, 본인증 대응까지 실제 업무 흐름에 맞춰 지원합니다. 이론이 아닌 현장에서 즉각 반영 가능한 실무형 파트너입니다.</p>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-card-inner">
-          <div class="why-n">02 ——</div>
-          <h3 class="why-title">공공시설 유형별 경험 기반</h3>
-          <p class="why-desc">공공청사, 교육시설, 복지시설, 문화시설 등 시설 특성에 맞는 BF 검토 포인트를 제안합니다. 30건 이상의 수행실적이 정확도를 증명합니다.</p>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-card-inner">
-          <div class="why-n">03 ——</div>
-          <h3 class="why-title">행정·설계·현장을 잇는 조율</h3>
-          <p class="why-desc">발주처, 설계사무소, 시공사 사이에서 보완사항을 정확히 정리하고 실행 가능하게 연결합니다. 설계 초기에 개입할수록 인증 리스크가 낮아집니다.</p>
-        </div>
-      </div>
+      <div class="why-card"><div class="why-card-inner"><div class="why-n">01 ——</div><h3 class="why-title">BF인증 실무 중심 대응</h3><p class="why-desc">설계단계 사전 검토부터 예비인증, 시공단계 보완, 본인증 대응까지 실제 업무 흐름에 맞춰 지원합니다. 이론이 아닌 현장에서 즉각 반영 가능한 실무형 파트너입니다.</p></div></div>
+      <div class="why-card"><div class="why-card-inner"><div class="why-n">02 ——</div><h3 class="why-title">공공시설 유형별 경험 기반</h3><p class="why-desc">공공청사, 교육시설, 복지시설, 문화시설 등 시설 특성에 맞는 BF 검토 포인트를 제안합니다. 30건 이상의 수행실적이 정확도를 증명합니다.</p></div></div>
+      <div class="why-card"><div class="why-card-inner"><div class="why-n">03 ——</div><h3 class="why-title">행정·설계·현장을 잇는 조율</h3><p class="why-desc">발주처, 설계사무소, 시공사 사이에서 보완사항을 정확히 정리하고 실행 가능하게 연결합니다. 설계 초기에 개입할수록 인증 리스크가 낮아집니다.</p></div></div>
     </div>
   </div>
 </section>
-
-<!-- ═══ PROCESS ═══ -->
 <section id="process">
   <div class="wrap">
     <div class="sec-hd">
       <div class="sec-hd-row">
-        <div>
-          <span class="eyebrow" style="color:rgba(255,255,255,.4)">Process</span>
-          <h2 class="sec-title sec-title--white">BF인증 진행 프로세스</h2>
-          <div class="sec-title-rule" style="background:var(--c-tertiary-dim)"></div>
-        </div>
+        <div><span class="eyebrow" style="color:rgba(255,255,255,.4)">Process</span><h2 class="sec-title sec-title--white">BF인증 진행 프로세스</h2><div class="sec-title-rule" style="background:var(--c-tertiary-dim)"></div></div>
         <p class="sec-lead sec-lead--white">설계 초기부터 개입할수록<br>보완 비용과 인증 리스크가 낮아집니다.</p>
       </div>
     </div>
     <div class="proc-wrap">
       <div class="proc-row">
-        <div class="proc-step">
-          <div class="proc-num">01</div>
-          <div class="proc-tag">착수</div>
-          <div class="proc-title">사업 이해 및 기본자료 검토</div>
-          <p class="proc-desc">과업 범위 설정, 관련 법령 검토, 시설 유형별 기준 분석.</p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">02</div>
-          <div class="proc-tag">설계</div>
-          <div class="proc-title">설계도서 사전 검토</div>
-          <p class="proc-desc">도면 기반 BF 기준 적합성 분석 및 보완사항 피드백.</p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">03</div>
-          <div class="proc-tag">리스크</div>
-          <div class="proc-title">리스크 포인트 정리</div>
-          <p class="proc-desc">항목별 리스크 등급화, 설계 수정 우선순위 제시.</p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">04</div>
-          <div class="proc-tag">예비인증</div>
-          <div class="proc-title">예비인증 대응</div>
-          <p class="proc-desc">신청 서류 준비 지원, 평가기관 질의·보완 대응.</p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">05</div>
-          <div class="proc-tag">시공</div>
-          <div class="proc-title">시공단계 확인 및 자문</div>
-          <p class="proc-desc">현장 확인, BF 기준 미준수 사항 실시간 보완 자문.</p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">06</div>
-          <div class="proc-tag">본인증</div>
-          <div class="proc-title">본인증 대응 및 마무리</div>
-          <p class="proc-desc">서류 완성, 현장 확인 동행, 인증서 취득 완료.</p>
-        </div>
+        <div class="proc-step"><div class="proc-num">01</div><div class="proc-tag">착수</div><div class="proc-title">사업 이해 및 기본자료 검토</div><p class="proc-desc">과업 범위 설정, 관련 법령 검토, 시설 유형별 기준 분석.</p></div>
+        <div class="proc-step"><div class="proc-num">02</div><div class="proc-tag">설계</div><div class="proc-title">설계도서 사전 검토</div><p class="proc-desc">도면 기반 BF 기준 적합성 분석 및 보완사항 피드백.</p></div>
+        <div class="proc-step"><div class="proc-num">03</div><div class="proc-tag">리스크</div><div class="proc-title">리스크 포인트 정리</div><p class="proc-desc">항목별 리스크 등급화, 설계 수정 우선순위 제시.</p></div>
+        <div class="proc-step"><div class="proc-num">04</div><div class="proc-tag">예비인증</div><div class="proc-title">예비인증 대응</div><p class="proc-desc">신청 서류 준비 지원, 평가기관 질의·보완 대응.</p></div>
+        <div class="proc-step"><div class="proc-num">05</div><div class="proc-tag">시공</div><div class="proc-title">시공단계 확인 및 자문</div><p class="proc-desc">현장 확인, BF 기준 미준수 사항 실시간 보완 자문.</p></div>
+        <div class="proc-step"><div class="proc-num">06</div><div class="proc-tag">본인증</div><div class="proc-title">본인증 대응 및 마무리</div><p class="proc-desc">서류 완성, 현장 확인 동행, 인증서 취득 완료.</p></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ═══ PORTFOLIO ═══ -->
 <section id="portfolio" class="sec sec-white">
   <div class="wrap">
     <div class="port-top">
-      <div>
-        <span class="eyebrow">Selected Portfolio</span>
-        <h2 class="sec-title">수행 실적</h2>
-        <div class="sec-title-rule"></div>
-      </div>
+      <div><span class="eyebrow">Selected Portfolio</span><h2 class="sec-title">수행 실적</h2><div class="sec-title-rule"></div></div>
       <p class="sec-lead">다양한 시설 유형에서 축적된 실무 경험이<br>인증의 정확도를 높이고 보완 리스크를 줄입니다.</p>
     </div>
-
-    <!-- 실적 KPI -->
     <div class="port-stat-row">
-      <div class="port-stat">
-        <div class="port-stat-n">30+</div>
-        <div class="port-stat-l">총 건축인증 수행건</div>
-      </div>
-      <div class="port-stat">
-        <div class="port-stat-n">6</div>
-        <div class="port-stat-l">시설 유형</div>
-      </div>
-      <div class="port-stat">
-        <div class="port-stat-n">100%</div>
-        <div class="port-stat-l">인증 취득률</div>
-      </div>
-      <div class="port-stat">
-        <div class="port-stat-n">다수</div>
-        <div class="port-stat-l">지자체·공공기관 수행</div>
-      </div>
+      <div class="port-stat"><div class="port-stat-n">30+</div><div class="port-stat-l">총 건축인증 수행건</div></div>
+      <div class="port-stat"><div class="port-stat-n">6</div><div class="port-stat-l">시설 유형</div></div>
+      <div class="port-stat"><div class="port-stat-n">100%</div><div class="port-stat-l">인증 취득률</div></div>
+      <div class="port-stat"><div class="port-stat-n">다수</div><div class="port-stat-l">지자체·공공기관 수행</div></div>
     </div>
-
-    <!-- 시설유형별 카테고리 -->
     <div class="cat-grid">
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-        </div>
-        <div>
-          <div class="cat-name">공공청사</div>
-          <div class="cat-u">관공서·행정기관 BF인증</div>
-        </div>
-        <div style="margin-left:auto;text-align:right">
-          <div class="cat-n">9+</div>
-          <div class="cat-u" style="font-size:11px">건</div>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l9 7v13H3V9z"/><path d="M9 22V12h6v10"/></svg>
-        </div>
-        <div>
-          <div class="cat-name">교육시설</div>
-          <div class="cat-u">학교·교육청·도서관</div>
-        </div>
-        <div style="margin-left:auto;text-align:right">
-          <div class="cat-n">6+</div>
-          <div class="cat-u" style="font-size:11px">건</div>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 4h12a2 2 0 00-2-4z"/></svg>
-        </div>
-        <div>
-          <div class="cat-name">복지시설</div>
-          <div class="cat-u">복지관·노인시설·장애인시설</div>
-        </div>
-        <div style="margin-left:auto;text-align:right">
-          <div class="cat-n">8+</div>
-          <div class="cat-u" style="font-size:11px">건</div>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="0"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <div>
-          <div class="cat-name">문화·체육시설</div>
-          <div class="cat-u">박물관·도서관·체육관</div>
-        </div>
-        <div style="margin-left:auto;text-align:right">
-          <div class="cat-n">4+</div>
-          <div class="cat-u" style="font-size:11px">건</div>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <div>
-          <div class="cat-name">의료시설</div>
-          <div class="cat-u">보건소·의료기관</div>
-        </div>
-        <div style="margin-left:auto;text-align:right">
-          <div class="cat-n">2+</div>
-          <div class="cat-u" style="font-size:11px">건</div>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        </div>
-        <div>
-          <div class="cat-name">기타 공공시설</div>
-          <div class="cat-u">터미널·공영주차장 외</div>
-        </div>
-        <div style="margin-left:auto;text-align:right">
-          <div class="cat-n">3+</div>
-          <div class="cat-u" style="font-size:11px">건</div>
-        </div>
-      </div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div><div class="cat-name">공공청사</div><div class="cat-u">관공서·행정기관 BF인증</div></div><div style="margin-left:auto;text-align:right"><div class="cat-n">9+</div><div class="cat-u" style="font-size:11px">건</div></div></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l9 7v13H3V9z"/><path d="M9 22V12h6v10"/></svg></div><div><div class="cat-name">교육시설</div><div class="cat-u">학교·교육청·도서관</div></div><div style="margin-left:auto;text-align:right"><div class="cat-n">6+</div><div class="cat-u" style="font-size:11px">건</div></div></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 4h12a2 2 0 00-2-4z"/></svg></div><div><div class="cat-name">복지시설</div><div class="cat-u">복지관·노인시설·장애인시설</div></div><div style="margin-left:auto;text-align:right"><div class="cat-n">8+</div><div class="cat-u" style="font-size:11px">건</div></div></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="0"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="cat-name">문화·체육시설</div><div class="cat-u">박물관·도서관·체육관</div></div><div style="margin-left:auto;text-align:right"><div class="cat-n">4+</div><div class="cat-u" style="font-size:11px">건</div></div></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="cat-name">의료시설</div><div class="cat-u">보건소·의료기관</div></div><div style="margin-left:auto;text-align:right"><div class="cat-n">2+</div><div class="cat-u" style="font-size:11px">건</div></div></div>
+      <div class="cat-card"><div class="cat-icon"><svg width="22" height="22" fill="none" stroke="var(--c-primary)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div><div class="cat-name">기타 공공시설</div><div class="cat-u">터미널·공영주차장 외</div></div><div style="margin-left:auto;text-align:right"><div class="cat-n">3+</div><div class="cat-u" style="font-size:11px">건</div></div></div>
     </div>
-
-    <!-- Featured 실적 -->
     <table class="port-table">
-      <thead>
-        <tr>
-          <th class="port-th">시설 유형</th>
-          <th class="port-th">수행 내용</th>
-          <th class="port-th">지역</th>
-          <th class="port-th port-td-last">인증 결과</th>
-        </tr>
-      </thead>
+      <thead><tr><th class="port-th">시설 유형</th><th class="port-th">수행 내용</th><th class="port-th">지역</th><th class="port-th port-td-last">인증 결과</th></tr></thead>
       <tbody>
-        <tr class="port-tr">
-          <td class="port-td port-td-name">공공청사</td>
-          <td class="port-td">설계 사전검토 · 예비인증 · 본인증 전과정</td>
-          <td class="port-td">경남</td>
-          <td class="port-td port-td-last"><span class="badge badge-best">본인증 완료 (우수)</span></td>
-        </tr>
-        <tr class="port-tr">
-          <td class="port-td port-td-name">복합복지관</td>
-          <td class="port-td">예비인증 대응 · 시공단계 자문</td>
-          <td class="port-td">부산</td>
-          <td class="port-td port-td-last"><span class="badge badge-best">본인증 완료 (최우수)</span></td>
-        </tr>
-        <tr class="port-tr">
-          <td class="port-td port-td-name">공립도서관</td>
-          <td class="port-td">설계도서 검토 · 예비인증</td>
-          <td class="port-td">경기</td>
-          <td class="port-td port-td-last"><span class="badge badge-std">예비인증 완료</span></td>
-        </tr>
-        <tr class="port-tr">
-          <td class="port-td port-td-name">교육시설</td>
-          <td class="port-td">전 과정 컨설팅 · 인증 서류 지원</td>
-          <td class="port-td">부산</td>
-          <td class="port-td port-td-last"><span class="badge badge-best">본인증 완료 (우수)</span></td>
-        </tr>
+        <tr class="port-tr"><td class="port-td port-td-name">공공청사</td><td class="port-td">설계 사전검토 · 예비인증 · 본인증 전과정</td><td class="port-td">경남</td><td class="port-td port-td-last"><span class="badge badge-best">본인증 완료 (우수)</span></td></tr>
+        <tr class="port-tr"><td class="port-td port-td-name">복합복지관</td><td class="port-td">예비인증 대응 · 시공단계 자문</td><td class="port-td">부산</td><td class="port-td port-td-last"><span class="badge badge-best">본인증 완료 (최우수)</span></td></tr>
+        <tr class="port-tr"><td class="port-td port-td-name">공립도서관</td><td class="port-td">설계도서 검토 · 예비인증</td><td class="port-td">경기</td><td class="port-td port-td-last"><span class="badge badge-std">예비인증 완료</span></td></tr>
+        <tr class="port-tr"><td class="port-td port-td-name">교육시설</td><td class="port-td">전 과정 컨설팅 · 인증 서류 지원</td><td class="port-td">부산</td><td class="port-td port-td-last"><span class="badge badge-best">본인증 완료 (우수)</span></td></tr>
       </tbody>
     </table>
     <p class="port-note">* 개인정보 보호를 위해 기관명 및 세부사항은 상담 시 공개합니다.</p>
   </div>
 </section>
-
-<!-- ═══ BLOG BANNER ═══ -->
-<a href="https://blog.naver.com/kipcbf" target="_blank" rel="noopener noreferrer" class="banner-blog" style="display:block">
+<a href="https://blog.naver.com/kipcbf" target="_blank" rel="noopener noreferrer" class="banner-blog">
   <div class="wrap">
     <div class="banner-inner">
-      <div class="banner-left">
-        <span class="naver-badge">NAVER BLOG</span>
-        <div>
-          <div class="banner-title">KIPCBF 블로그</div>
-          <div class="banner-desc">BF인증 실무 가이드 · 최신 법령 해설 · 현장 정보 · 인증 사례 분석</div>
-        </div>
-      </div>
-      <div class="banner-arrow">
-        블로그 방문하기
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
+      <div class="banner-left"><span class="naver-badge">NAVER BLOG</span><div><div class="banner-title">KIPCBF 블로그</div><div class="banner-desc">BF인증 실무 가이드 · 최신 법령 해설 · 현장 정보 · 인증 사례 분석</div></div></div>
+      <div class="banner-arrow">블로그 방문하기 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
   </div>
 </a>
-
-<!-- ═══ KOIZI BANNER ═══ -->
 <div class="banner-koizi">
   <div class="wrap">
     <div class="koizi-inner">
-      <div>
-        <div class="koizi-label">Group Brand · Universal Design</div>
-        <h3 class="koizi-title"><span class="koizi-yellow">KOIZI</span> — 유니버설디자인 브랜드</h3>
-        <p class="koizi-sub">"cozy life, make it eazy" · AIP 주거안전 · AI 주거안전 점검 서비스(beta)</p>
-      </div>
+      <div><div class="koizi-label">Group Brand · Universal Design</div><h3 class="koizi-title"><span class="koizi-yellow">KOIZI</span> — 유니버설디자인 브랜드</h3><p class="koizi-sub">"cozy life, make it eazy" · AIP 주거안전 · AI 주거안전 점검 서비스(beta)</p></div>
       <div class="koizi-divider"></div>
-      <a href="https://koizi.kr" target="_blank" rel="noopener noreferrer" class="koizi-cta">
-        koizi.kr 방문하기
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <a href="https://koizi.kr" target="_blank" rel="noopener noreferrer" class="koizi-cta">koizi.kr 방문하기 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </div>
-
-<!-- ═══ FAQ ═══ -->
 <section id="faq" class="sec sec-white">
   <div class="wrap">
-    <div class="sec-hd" style="text-align:center">
-      <span class="eyebrow">FAQ</span>
-      <h2 class="sec-title" style="margin:0 auto">자주 묻는 질문</h2>
-    </div>
+    <div class="sec-hd" style="text-align:center"><span class="eyebrow">FAQ</span><h2 class="sec-title" style="margin:0 auto">자주 묻는 질문</h2></div>
     <div class="faq-list">
-      <details class="faq">
-        <summary>BF인증은 언제부터 준비해야 하나요?</summary>
-        <div class="faq-body">기획 단계 또는 기본 설계 착수 시점부터 준비하는 것이 가장 효율적입니다. 공사가 진행된 이후에는 물리적인 구조 변경이 어려워 인증 취득 비용과 시간이 대폭 증가할 수 있습니다. 설계 초기 단계의 검토가 가장 비용 효율적입니다.</div>
-      </details>
-      <details class="faq">
-        <summary>예비인증과 본인증의 차이는 무엇인가요?</summary>
-        <div class="faq-body">예비인증은 설계도면을 바탕으로 인증 가능 여부를 사전에 검증합니다. 본인증은 건물 준공 후 실제 시공 상태가 인증 기준에 부합하는지 현장 점검을 통해 최종 등급을 결정합니다. 의무 대상 시설은 두 인증 모두 취득이 요구됩니다.</div>
-      </details>
-      <details class="faq">
-        <summary>설계변경이 발생하면 인증에 어떤 영향을 미치나요?</summary>
-        <div class="faq-body">BF 평가 핵심 항목(주출입구, 장애인 화장실, 경사로 등)에 영향을 미치는 변경은 반드시 재검토 후 반영해야 합니다. 컨설팅 계약 기간 내 변경 건은 추가 비용 없이 검토를 지원합니다.</div>
-      </details>
-      <details class="faq">
-        <summary>시공 중 문제가 발견되면 어떻게 대응하나요?</summary>
-        <div class="faq-body">현장 확인을 통해 즉시 보완 방향을 제시합니다. 시공사 및 감리단과 협력하여 인증에 영향을 미치지 않는 범위에서 가장 효율적인 보완 방법을 안내합니다.</div>
-      </details>
-      <details class="faq">
-        <summary>BF인증 의무 대상 시설은 어디인가요?</summary>
-        <div class="faq-body">「장애물 없는 생활환경 인증에 관한 규칙」에 따라 국가·지자체가 신축하는 청사, 문화시설, 복지시설, 의료기관, 교육시설 등 다수가 의무 대상입니다. 구체적인 해당 여부는 상담을 통해 안내드립니다.</div>
-      </details>
-      <details class="faq">
-        <summary>BF인증 외 녹색건축인증과 에너지효율등급은 별도 계약인가요?</summary>
-        <div class="faq-body">각 인증 유형별로 별도 계약이 원칙이나, BF인증과 병행 수행 시 패키지 견적을 제공합니다. 동일 프로젝트에서 다수 인증을 진행하면 서류 준비 효율이 높아집니다.</div>
-      </details>
+      <details class="faq"><summary>BF인증은 언제부터 준비해야 하나요?</summary><div class="faq-body">기획 단계 또는 기본 설계 착수 시점부터 준비하는 것이 가장 효율적입니다. 공사가 진행된 이후에는 물리적인 구조 변경이 어려워 인증 취득 비용과 시간이 대폭 증가할 수 있습니다.</div></details>
+      <details class="faq"><summary>예비인증과 본인증의 차이는 무엇인가요?</summary><div class="faq-body">예비인증은 설계도면을 바탕으로 인증 가능 여부를 사전에 검증합니다. 본인증은 건물 준공 후 실제 시공 상태가 인증 기준에 부합하는지 현장 점검을 통해 최종 등급을 결정합니다.</div></details>
+      <details class="faq"><summary>설계변경이 발생하면 인증에 어떤 영향을 미치나요?</summary><div class="faq-body">BF 평가 핵심 항목(주출입구, 장애인 화장실, 경사로 등)에 영향을 미치는 변경은 반드시 재검토 후 반영해야 합니다. 컨설팅 계약 기간 내 변경 건은 추가 비용 없이 검토를 지원합니다.</div></details>
+      <details class="faq"><summary>시공 중 문제가 발견되면 어떻게 대응하나요?</summary><div class="faq-body">현장 확인을 통해 즉시 보완 방향을 제시합니다. 시공사 및 감리단과 협력하여 인증에 영향을 미치지 않는 범위에서 가장 효율적인 보완 방법을 안내합니다.</div></details>
+      <details class="faq"><summary>BF인증 의무 대상 시설은 어디인가요?</summary><div class="faq-body">「장애물 없는 생활환경 인증에 관한 규칙」에 따라 국가·지자체가 신축하는 청사, 문화시설, 복지시설, 의료기관, 교육시설 등 다수가 의무 대상입니다. 구체적인 해당 여부는 상담을 통해 안내드립니다.</div></details>
+      <details class="faq"><summary>BF인증 외 녹색건축인증과 에너지효율등급은 별도 계약인가요?</summary><div class="faq-body">각 인증 유형별로 별도 계약이 원칙이나, BF인증과 병행 수행 시 패키지 견적을 제공합니다. 동일 프로젝트에서 다수 인증을 진행하면 서류 준비 효율이 높아집니다.</div></details>
     </div>
   </div>
 </section>
-
-<!-- ═══ FINAL CTA ═══ -->
 <div class="final-cta">
   <div class="wrap">
     <h2>BF인증, 초기에 검토할수록 수월합니다</h2>
@@ -795,8 +401,6 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
     <a href="#contact" class="btn btn-orange" style="font-family:'Public Sans',sans-serif;font-size:17px;font-weight:900;padding:16px 40px">상담 문의 시작하기</a>
   </div>
 </div>
-
-<!-- ═══ CONTACT ═══ -->
 <section id="contact">
   <div class="wrap">
     <div class="contact-grid">
@@ -804,80 +408,32 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
         <div class="contact-tagline">Contact Us</div>
         <h2 class="contact-h">BF인증에 대해<br>무엇이든 물어보세요</h2>
         <p class="contact-p">시설 유형, 설계 단계, 인증 의무 여부에 관계없이<br>먼저 상담을 통해 방향을 잡아드립니다.</p>
-        <div class="contact-det">
-          <div class="contact-det-ico">
-            <svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.29 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <div>
-            <div class="contact-det-lbl">Phone</div>
-            <div class="contact-det-val">051-611-5060</div>
-          </div>
-        </div>
-        <div class="contact-det">
-          <div class="contact-det-ico">
-            <svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div>
-            <div class="contact-det-lbl">Email</div>
-            <div class="contact-det-val">kipcbf@naver.com</div>
-          </div>
-        </div>
-        <div class="contact-det">
-          <div class="contact-det-ico">
-            <svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <div class="contact-det-lbl">Address</div>
-            <div class="contact-det-val">부산광역시 해운대구 대천로 92-6, 4층</div>
-          </div>
-        </div>
+        <div class="contact-det"><div class="contact-det-ico"><svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.29 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="contact-det-lbl">Phone</div><div class="contact-det-val">[전화번호 입력]</div></div></div>
+        <div class="contact-det"><div class="contact-det-ico"><svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="contact-det-lbl">Email</div><div class="contact-det-val">[이메일 입력]</div></div></div>
+        <div class="contact-det"><div class="contact-det-ico"><svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="contact-det-lbl">Address</div><div class="contact-det-val">부산광역시 해운대구 [주소 입력]</div></div></div>
       </div>
       <div class="form-box">
         <div class="form-row">
-          <div class="form-g">
-            <label class="form-lbl">기관·회사명 <span class="req">*</span></label>
-            <input type="text" class="form-ctrl" placeholder="기관 또는 회사명" id="f-org">
-          </div>
-          <div class="form-g">
-            <label class="form-lbl">담당자명 <span class="req">*</span></label>
-            <input type="text" class="form-ctrl" placeholder="성함" id="f-name">
-          </div>
+          <div class="form-g"><label class="form-lbl">기관·회사명 <span class="req">*</span></label><input type="text" class="form-ctrl" placeholder="기관 또는 회사명" id="f-org"></div>
+          <div class="form-g"><label class="form-lbl">담당자명 <span class="req">*</span></label><input type="text" class="form-ctrl" placeholder="성함" id="f-name"></div>
         </div>
         <div class="form-row">
-          <div class="form-g">
-            <label class="form-lbl">연락처 <span class="req">*</span></label>
-            <input type="tel" class="form-ctrl" placeholder="010-0000-0000" id="f-tel">
-          </div>
-          <div class="form-g">
-            <label class="form-lbl">이메일</label>
-            <input type="email" class="form-ctrl" placeholder="email@org.kr">
-          </div>
+          <div class="form-g"><label class="form-lbl">연락처 <span class="req">*</span></label><input type="tel" class="form-ctrl" placeholder="010-0000-0000" id="f-tel"></div>
+          <div class="form-g"><label class="form-lbl">이메일</label><input type="email" class="form-ctrl" placeholder="email@org.kr"></div>
         </div>
         <div class="form-g">
           <label class="form-lbl">문의 유형 <span class="req">*</span></label>
           <select class="form-ctrl" style="background:rgba(255,255,255,.06);border:none;border-bottom:1px solid rgba(255,255,255,.2);padding:10px 0;color:rgba(255,255,255,.7)">
             <option value="">문의 유형 선택</option>
-            <option>BF인증 컨설팅</option>
-            <option>녹색건축인증</option>
-            <option>건축물에너지효율등급·제로에너지</option>
-            <option>UD 컨설팅</option>
-            <option>장애인표준사업장 컨설팅</option>
-            <option>주거안전 점검</option>
-            <option>연구용역</option>
-            <option>기타</option>
+            <option>BF인증 컨설팅</option><option>녹색건축인증</option><option>건축물에너지효율등급·제로에너지</option><option>UD 컨설팅</option><option>장애인표준사업장 컨설팅</option><option>주거안전 점검</option><option>연구용역</option><option>기타</option>
           </select>
         </div>
-        <div class="form-g">
-          <label class="form-lbl">문의 내용</label>
-          <textarea class="form-ctrl" placeholder="시설 유형, 연면적, 설계 진행 단계 등을 알려주시면 더 정확한 안내가 가능합니다." id="f-msg"></textarea>
-        </div>
+        <div class="form-g"><label class="form-lbl">문의 내용</label><textarea class="form-ctrl" placeholder="시설 유형, 연면적, 설계 진행 단계 등을 알려주시면 더 정확한 안내가 가능합니다." id="f-msg"></textarea></div>
         <button class="form-submit" onclick="handleSubmit()">상담 신청하기</button>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -898,33 +454,12 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
         <p class="footer-desc" style="margin-bottom:12px">공공건축 BF인증 전문회사<br>설계 검토부터 예비인증·본인증까지<br>정확하고 체계적으로 지원합니다.</p>
         <p class="footer-desc" style="font-size:12px">KOITA 연구개발전담부서 인정 · 소셜벤처기업</p>
       </div>
+      <div><p class="footer-h">Services</p><ul class="footer-links"><li><a href="#services">BF인증 컨설팅</a></li><li><a href="#services">녹색건축인증</a></li><li><a href="#services">에너지효율등급</a></li><li><a href="#services">UD 컨설팅</a></li><li><a href="#services">장애인표준사업장</a></li></ul></div>
+      <div><p class="footer-h">Company</p><ul class="footer-links"><li><a href="#portfolio">수행실적</a></li><li><a href="#process">인증 프로세스</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">상담 문의</a></li></ul></div>
       <div>
-        <p class="footer-h">Services</p>
-        <ul class="footer-links">
-          <li><a href="#services">BF인증 컨설팅</a></li>
-          <li><a href="#services">녹색건축인증</a></li>
-          <li><a href="#services">에너지효율등급</a></li>
-          <li><a href="#services">UD 컨설팅</a></li>
-          <li><a href="#services">장애인표준사업장</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-h">Company</p>
-        <ul class="footer-links">
-          <li><a href="#portfolio">수행실적</a></li>
-          <li><a href="#process">인증 프로세스</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">상담 문의</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-h">Group</p>
-        <ul class="footer-links">
-          <li><a href="https://koizi.kr" target="_blank">KOIZI.kr</a></li>
-          <li><a href="https://blog.naver.com/kipcbf" target="_blank">KIPCBF 블로그</a></li>
-        </ul>
+        <p class="footer-h">Group</p><ul class="footer-links"><li><a href="https://koizi.kr" target="_blank">KOIZI.kr</a></li><li><a href="https://blog.naver.com/kipcbf" target="_blank">KIPCBF 블로그</a></li></ul>
         <p class="footer-h" style="margin-top:20px">Contact</p>
-        <p class="footer-desc" style="font-size:12px">T.051-611-5060<br>E.kipcbf@naver.com<br>부산광역시 해운대구 대천로 92-6, 4층</p>
+        <p class="footer-desc" style="font-size:12px">T. [전화번호]<br>E. [이메일]<br>부산광역시 해운대구</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -933,17 +468,11 @@ footer{background:#000a1e;padding:5rem 0 2rem;border-top:1px solid rgba(255,255,
     </div>
   </div>
 </footer>
-
 <script>
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',scrollY>30)
-})
-document.getElementById('navToggle').addEventListener('click',()=>{
-  document.getElementById('mobNav').classList.toggle('open')
-})
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>30)})
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('mobNav').classList.toggle('open')})
 function closeMob(){document.getElementById('mobNav').classList.remove('open')}
 document.querySelectorAll('.mob-nav a').forEach(a=>a.addEventListener('click',closeMob))
-
 function handleSubmit(){
   const org=document.getElementById('f-org').value.trim()
   const name=document.getElementById('f-name').value.trim()
